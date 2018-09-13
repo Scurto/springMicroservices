@@ -5,11 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rest/hello/server")
+@RequestMapping("/rest")
 public class HelloResource {
 
-    @GetMapping
+    @GetMapping("/server")
+    public String defaultHello() {
+        return "Hello FROM CLIENT!";
+    }
+
+    @GetMapping("/hello")
     public String hello() {
-        return "Hello World!";
+        return "Hello From SERVER!";
     }
 }
